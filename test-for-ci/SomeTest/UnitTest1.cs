@@ -1,7 +1,17 @@
-﻿namespace SomeTest;
+﻿// <copyright file="UnitTest1.cs" company="SomeCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-public class Tests
+namespace SomeTest;
+
+/// <summary>
+/// SomeComment.
+/// </summary>
+public class UnitTest1
 {
+    /// <summary>
+    /// SomeComment.
+    /// </summary>
     [Test]
     public void Test1()
     {
