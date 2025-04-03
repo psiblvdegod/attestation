@@ -13,19 +13,42 @@ public class Tests
     /// Tests LinkedList.Append() on int as type parameter.
     /// </summary>
     [Test]
-    public void AppendTesting()
+    public void Append_OnInt()
     {
         var list = new LinkedList.LinkedList<int>();
 
-        list.Append(1);
+        int[] inputData = [5, 4, 3, 2, 1];
 
-        list.Append(2);
-
-        list.Append(3);
+        foreach (var i in inputData)
+        {
+            list.Append(i);
+        }
 
         var listAsIEnumerable = list.ConvertToIEnumerable();
 
-        IEnumerable<int> expectedResult = [1, 2, 3];
+        IEnumerable<int> expectedResult = [5, 4, 3, 2, 1];
+
+        Assert.That(listAsIEnumerable, Is.EqualTo(expectedResult));
+    }
+
+    /// <summary>
+    /// Tests LinkedList.Append() on string as type parameter.
+    /// </summary>
+    [Test]
+    public void Append_OnString()
+    {
+        var list = new LinkedList.LinkedList<string>();
+
+        string[] inputData = ["5", "4", "3", "2", "1"];
+
+        foreach (var i in inputData)
+        {
+            list.Append(i);
+        }
+
+        var listAsIEnumerable = list.ConvertToIEnumerable();
+
+        IEnumerable<string> expectedResult = ["5", "4", "3", "2", "1"];
 
         Assert.That(listAsIEnumerable, Is.EqualTo(expectedResult));
     }
@@ -38,21 +61,18 @@ public class Tests
     {
         var list = new LinkedList.LinkedList<int>();
 
-        list.Append(1);
+        int[] inputData = [1, 2, 3, 3, 3, 2, 2, 4, 1, 5];
 
-        list.Append(2);
-
-        list.Append(3);
-
-        list.Append(2);
-
-        list.Append(2);
+        foreach (var i in inputData)
+        {
+            list.Append(i);
+        }
 
         list.RemoveAllRepeats();
 
         var listAsIEnumerable = list.ConvertToIEnumerable();
 
-        IEnumerable<int> expectedResult = [1, 2, 3, 2];
+        IEnumerable<int> expectedResult = [1, 2, 3, 2, 4, 1, 5];
 
         Assert.That(listAsIEnumerable, Is.EqualTo(expectedResult));
     }
