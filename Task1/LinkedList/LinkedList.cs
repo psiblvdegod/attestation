@@ -30,7 +30,29 @@ public class LinkedList<T> : ILinkedList<T>
 
     public void RemoveAllRepeats()
     {
-        throw new NotImplementedException();
+        if (head == null)
+        {
+            throw new InvalidOperationException("list is empty.");
+        }
+
+        var prev = head;
+
+        var current = head.Next;
+
+        while (current != null)
+        {
+            if (object.Equals(prev.Data, current.Data))
+            {
+                current = current.Next;
+                prev.Next = current;
+                
+            }
+            else
+            {
+                prev = current;
+                current = current.Next;
+            }
+        }
     }
 
     public IEnumerable<T> ConvertToIEnumerable()
