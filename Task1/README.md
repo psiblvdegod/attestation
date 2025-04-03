@@ -1,1 +1,1 @@
-Task of attestation challenge at SPBU. \
+Task of attestation challenge at SPBU.

@@ -13,10 +13,16 @@ public class Tests
     /// Tests ... on ...
     /// </summary>
     [Test]
-    public void Test1()
+    public void AppendTesting()
     {
-        var data = 1;
+        var list = new LinkedList.LinkedList<int>();
 
-        Assert.That(data, Is.EqualTo(1));
+        list.Append(1);
+
+        list.Append(2);
+
+        list.Append(3);
+
+        var a = 1;
     }
 }
