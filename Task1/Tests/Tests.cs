@@ -24,7 +24,7 @@ public class Tests
             list.Append(i);
         }
 
-        var listAsIEnumerable = list.ConvertToIEnumerable();
+        var listAsIEnumerable = list.ConvertToEnumerable();
 
         IEnumerable<int> expectedResult = [5, 4, 3, 2, 1];
 
@@ -46,7 +46,7 @@ public class Tests
             list.Append(i);
         }
 
-        var listAsIEnumerable = list.ConvertToIEnumerable();
+        var listAsIEnumerable = list.ConvertToEnumerable();
 
         IEnumerable<string> expectedResult = ["5", "4", "3", "2", "1"];
 
@@ -70,7 +70,7 @@ public class Tests
 
         list.RemoveAllRepeats();
 
-        var listAsIEnumerable = list.ConvertToIEnumerable();
+        var listAsIEnumerable = list.ConvertToEnumerable();
 
         IEnumerable<int> expectedResult = [1, 2, 3, 2, 4, 1, 5];
 
@@ -94,7 +94,7 @@ public class Tests
 
         list.RemoveAllRepeats();
 
-        var listAsIEnumerable = list.ConvertToIEnumerable();
+        var listAsIEnumerable = list.ConvertToEnumerable();
 
         IEnumerable<string> expectedResult = ["123", "234", "123"];
 

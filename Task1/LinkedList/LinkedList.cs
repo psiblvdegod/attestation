@@ -1,43 +1,53 @@
-﻿namespace LinkedList;
+﻿// <copyright file="LinkedList.cs" author="psiblvdegod">
+// under MIT License.
+// </copyright>
 
+namespace LinkedList;
+
+/// <summary>
+/// Implements data structure "Linked list".
+/// </summary>
+/// <typeparam name="T">Type of elements in the list.</typeparam>
 public class LinkedList<T> : ILinkedList<T>
 {
     private Node? head;
 
     private Node? tail;
 
+    /// <inheritdoc/>
     public void Append(T data)
     {
         var newNode = new Node(data);
 
-        if (head == null || tail == null)
+        if (this.head == null || this.tail == null)
         {
-            head = newNode;
-            tail = newNode;
+            this.head = newNode;
+            this.tail = newNode;
             return;
         }
 
-        if (head.Next == null)
+        if (this.head.Next == null)
         {
-            head.Next = newNode;
-            tail = newNode;
+            this.head.Next = newNode;
+            this.tail = newNode;
             return;
         }
 
-        tail.Next = newNode;
-        tail = newNode;
+        this.tail.Next = newNode;
+        this.tail = newNode;
     }
 
+    /// <inheritdoc/>
     public void RemoveAllRepeats()
     {
-        if (head == null)
+        if (this.head == null)
         {
             throw new InvalidOperationException("list is empty.");
         }
 
-        var prev = head;
+        var prev = this.head;
 
-        var current = head.Next;
+        var current = this.head.Next;
 
         while (current != null)
         {
@@ -45,7 +55,6 @@ public class LinkedList<T> : ILinkedList<T>
             {
                 current = current.Next;
                 prev.Next = current;
-                
             }
             else
             {
@@ -55,11 +64,12 @@ public class LinkedList<T> : ILinkedList<T>
         }
     }
 
-    public IEnumerable<T> ConvertToIEnumerable()
+    /// <inheritdoc/>
+    public IEnumerable<T> ConvertToEnumerable()
     {
         IEnumerable<T> result = [];
 
-        var current = head;
+        var current = this.head;
 
         while (current is not null)
         {
