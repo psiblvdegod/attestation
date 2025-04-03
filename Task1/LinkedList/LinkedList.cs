@@ -33,6 +33,22 @@ public class LinkedList<T> : ILinkedList<T>
         throw new NotImplementedException();
     }
 
+    public IEnumerable<T> ConvertToIEnumerable()
+    {
+        IEnumerable<T> result = [];
+
+        var current = head;
+
+        while (current is not null)
+        {
+            result = result.Append(current.Data);
+
+            current = current.Next;
+        }
+
+        return result;
+    }
+
     private class Node(T data)
     {
         public Node? Next {get; set;}

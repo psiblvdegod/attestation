@@ -23,6 +23,10 @@ public class Tests
 
         list.Append(3);
 
-        var a = 1;
+        var listAsIEnumerable = list.ConvertToIEnumerable();
+
+        IEnumerable<int> expectedResult = [1, 2, 3];
+
+        Assert.That(listAsIEnumerable, Is.EqualTo(expectedResult));
     }
 }
