@@ -22,18 +22,16 @@ public class LinkedList<T> : ILinkedList<T>
         if (this.head == null || this.tail == null)
         {
             this.head = newNode;
-            this.tail = newNode;
-            return;
         }
-
-        if (this.head.Next == null)
+        else if (this.head.Next == null)
         {
             this.head.Next = newNode;
-            this.tail = newNode;
-            return;
+        }
+        else
+        {
+            this.tail.Next = newNode;
         }
 
-        this.tail.Next = newNode;
         this.tail = newNode;
     }
 
@@ -51,7 +49,7 @@ public class LinkedList<T> : ILinkedList<T>
 
         while (current != null)
         {
-            if (object.Equals(prev.Data, current.Data))
+            if (Equals(prev.Data, current.Data))
             {
                 current = current.Next;
                 prev.Next = current;

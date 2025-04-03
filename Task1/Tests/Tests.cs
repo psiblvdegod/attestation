@@ -100,4 +100,15 @@ public class Tests
 
         Assert.That(listAsIEnumerable, Is.EqualTo(expectedResult));
     }
+
+    /// <summary>
+    /// Checks that RemoveAllRepeats() throws InvalidOperationException of empty list.
+    /// </summary>
+    [Test]
+    public void RemoveAllRepeats_OnEmptyList_ShouldThrowException()
+    {
+        var list = new LinkedList.LinkedList<bool>();
+
+        Assert.Throws<InvalidOperationException>(() => list.RemoveAllRepeats());
+    }
 }
