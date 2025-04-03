@@ -73,7 +73,7 @@ public class LinkedList<T> : ILinkedList<T>
 
     private class Node(T data)
     {
-        public Node? Next {get; set;}
+        public Node? Next { get; set; }
 
         public T Data { get; set; } = data;
     }
